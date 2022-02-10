@@ -1,0 +1,2 @@
+# AppGlobais
+Globais
