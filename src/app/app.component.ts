@@ -1,20 +1,32 @@
 import { Component } from '@angular/core';
-
-import { PoMenuItem } from '@po-ui/ng-components';
+import { PoNavbarItem } from '@po-ui/ng-components';
 
 @Component({
-  selector: 'app-root',
+  selector: 'glb-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  public title: string = 'Globais AppComponent';
 
-  readonly menus: Array<PoMenuItem> = [
-    { label: 'Home', action: this.onClick.bind(this) }
-  ];
+  public IsMenuCollapsed: boolean = false;
 
-  private onClick() {
-    alert('Clicked in menu item')
+  public items: Array<PoNavbarItem> = [];
+
+  ngOnInit(): void {
+    this.LoadItems();
   }
 
+  public LoadItems() {
+    this.items = [];
+
+    this.items.push({
+      label: 'Coligada',
+      link: "../company"
+    }, {
+      label: 'Usuários',
+      link: "../user"
+    }
+    );
+  }
 }

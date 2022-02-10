@@ -3,16 +3,13 @@ const mf = require("@angular-architects/module-federation/webpack");
 const path = require("path");
 const share = mf.share;
 
-const URLGlb = "http://localhost:7001/remoteEntry.js";
-const URLEdu = "http://localhost:7002/remoteEntry.js";
-
 const sharedMappings = new mf.SharedMappings();
 sharedMappings.register(path.join(__dirname, "tsconfig.json"), [
   /* mapped paths to share */
 ]);
 
 module.exports = {
-  output: {
+   output: {
     uniqueName: "appglobais",
     publicPath: "auto",
   },
@@ -31,12 +28,12 @@ module.exports = {
     new ModuleFederationPlugin({
       library: { type: "module" },
 
-      // For hosts (please adjust)
-      remotes: {
-        mglb: URLGlb,
-        medu: URLEdu,
+      // For remotes (please adjust)
+      name: "mglb",
+      filename: "remoteEntry.js",
+      exposes: {
+        "./Module": "src/app/interop.module.ts",
       },
-
       shared: share({
         "@angular/core": {
           singleton: true,
