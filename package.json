@@ -22,7 +22,7 @@
     "@angular/router": "^13.0.2",
     "@po-ui/ng-components": "^6.0.0",
     "@po-ui/ng-templates": "^5.4.0",
-    "angular-erp-integration": "^1.2.3",
+    "@types/component-emitter": "^1.2.11",
     "ngx-build-plus": "^13.0.1",
     "rxjs": "~7.4.0",
     "tslib": "^2.3.0",
