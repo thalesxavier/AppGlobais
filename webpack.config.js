@@ -55,6 +55,46 @@ module.exports = {
           strictVersion: true,
           requiredVersion: "auto",
         },
+        "@angular-architects/module-federation": {
+          singleton: true,
+          strictVersion: true,
+          requiredVersion: "auto",
+        },
+        "@angular/animations": {
+          singleton: true,
+          strictVersion: true,
+          requiredVersion: "auto",
+        },
+        "@angular/compiler": {
+          singleton: true,
+          strictVersion: true,
+          requiredVersion: "auto",
+        },
+        "@angular/forms": {
+          singleton: true,
+          strictVersion: true,
+          requiredVersion: "auto",
+        },
+        "@angular/platform-browser": {
+          singleton: true,
+          strictVersion: true,
+          requiredVersion: "auto",
+        },
+        "@angular/platform-browser-dynamic": {
+          singleton: true,
+          strictVersion: true,
+          requiredVersion: "auto",
+        },
+        "@po-ui/ng-components": {
+          singleton: true,
+          strictVersion: true,
+          requiredVersion: "auto",
+        },
+        "@po-ui/ng-templates": {
+          singleton: true,
+          strictVersion: true,
+          requiredVersion: "auto",
+        },
 
         ...sharedMappings.getDescriptors(),
       }),
