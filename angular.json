@@ -17,6 +17,7 @@
         "build": {
           "builder": "ngx-build-plus:browser",
           "options": {
+            "preserveSymlinks": true,
             "aot": true,
             "outputPath": "dist/appglobais",
             "index": "src/index.html",
