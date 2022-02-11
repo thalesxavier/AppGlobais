@@ -15,14 +15,14 @@
       },
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "ngx-build-plus:browser",
           "options": {
             "aot": true,
             "outputPath": "dist/appglobais",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
-            "tsConfig": "src/tsconfig.app.json",
+            "tsConfig": "tsconfig.app.json",
             "assets": ["src/favicon.ico", "src/assets"],
             "stylePreprocessorOptions": {
               "includePaths": ["src/styles"]
@@ -32,7 +32,9 @@
 							"./node_modules/@po-ui/style/css/po-theme-core.min.css",
 							"./src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+						"extraWebpackConfig": "webpack.config.js",
+						"commonChunk": false
           },
           "configurations": {
             "production": {
@@ -44,6 +46,7 @@
               ],
               "optimization": true,
               "outputHashing": "all",
+              "extraWebpackConfig": "webpack.prod.config.js",
               "sourceMap": false,
               "namedChunks": false,
               "aot": true,
@@ -65,7 +68,7 @@
           }
         },
         "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
+          "builder": "ngx-build-plus:dev-server",
           "options": {
             "browserTarget": "appglobais:build",
             "port": 1000,
@@ -99,7 +102,7 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "exclude": ["**/node_modules/**"],
-            "tsConfig": ["src/tsconfig.app.json", "src/tsconfig.spec.json"]
+            "tsConfig": ["tsconfig.app.json", "tsconfig.spec.json"]
           }
         }
       }
